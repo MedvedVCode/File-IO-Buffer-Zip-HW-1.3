@@ -59,24 +59,24 @@ public class Main {
 
     private static void addFileResult(File file) {
         Date createTime = new Date();
-        result.append(createTime).append(" --> Создание файла ").append(file.getName());
+        result.append(createTime).append(" --> РЎРѕР·РґР°РЅРёРµ РєР°С‚Р°Р»РѕРіР° ").append(file.getName());
         try{
             file.createNewFile();
-            result.append(" прошло успешно!\n");
+            result.append(" РїСЂРѕС€Р»Рѕ РЅРµСѓСЃРїРµС€РЅРѕ!\n");
         }
         catch(IOException error){
             System.out.println(error.getMessage());
-            result.append(" прошло неуспешно!\n");
+            result.append(" РїСЂРѕС€Р»Рѕ РЅРµСѓСЃРїРµС€РЅРѕ!\n");
         }
     }
 
     private static void addDirectoryResult(File file) {
         Date createTime = new Date();
-        result.append(createTime).append(" --> Создание каталога ").append(file.getName());
+        result.append(createTime).append(" --> РЎРѕР·РґР°РЅРёРµ РєР°С‚Р°Р»РѕРіР° ").append(file.getName());
         if (file.mkdir()) {
-            result.append(" прошло успешно!\n");
+            result.append(" РїСЂРѕС€Р»Рѕ СѓСЃРїРµС€РЅРѕ!\n");
         } else {
-            result.append(" прошло неуспешно!\n");
+            result.append(" РїСЂРѕС€Р»Рѕ РЅРµСѓСЃРїРµС€РЅРѕ!\n");
         }
 
     }
