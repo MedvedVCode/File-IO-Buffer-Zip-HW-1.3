@@ -13,7 +13,7 @@ public class Loading {
         openZip(path + "gamearchive.zip", path);
 
         GameProgress game01 = openProgress(path + "save01.dat");
-        GameProgress game02 = openProgress(path+"save02.dat");
+        GameProgress game02 = openProgress(path + "save02.dat");
     }
 
     private static GameProgress openProgress(String path) throws ClassNotFoundException {
