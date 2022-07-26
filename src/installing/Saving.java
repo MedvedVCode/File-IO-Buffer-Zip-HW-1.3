@@ -1,4 +1,4 @@
-package saving;
+package installing;
 
 import java.io.*;
 import java.util.zip.ZipEntry;
@@ -30,8 +30,9 @@ public class Saving {
     private static void zipFiles(String path, String[] list) {
         try (ZipOutputStream targetZip = new ZipOutputStream(new FileOutputStream(path))) {
             for (int i = 0; i < list.length; i++) {
-                FileInputStream zipSource = new FileInputStream(list[i]);
-                ZipEntry zipEntry = new ZipEntry(list[i].substring(list[i].length() - 10, list[i].length()));
+                File file = new File(list[i]);
+                FileInputStream zipSource = new FileInputStream(file.getPath());
+                ZipEntry zipEntry = new ZipEntry(file.getName());
 
                 targetZip.putNextEntry(zipEntry);
 
@@ -42,7 +43,6 @@ public class Saving {
                 targetZip.closeEntry();
                 zipSource.close();
 
-                File file = new File(list[i]);
                 file.delete();
             }
         } catch (IOException error) {

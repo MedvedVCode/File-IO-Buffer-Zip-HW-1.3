@@ -1,4 +1,4 @@
-package saving;
+package installing;
 
 import java.io.Serializable;
 
